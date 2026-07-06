@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Text Summarizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>🧠 AI Text Summarizer</h1>
+      <p>Paste any text below and get an instant AI-powered summary</p>
+    </div>
+
+    <!-- Input Section -->
+    <div class="card">
+      <label for="inputText">Your Text</label>
+      <textarea
+        id="inputText"
+        placeholder="Paste your article, notes, or any long text here..."
+        rows="10"
+      ></textarea>
+
+      <div class="char-count">
+        <span id="charCount">0</span> characters
+      </div>
+
+      <button id="summarizeBtn" onclick="summarize()">
+        ✨ Summarize
+      </button>
+    </div>
+
+    <!-- Output Section (hidden until result comes) -->
+    <div class="card" id="outputCard" style="display:none;">
+      <label>Summary</label>
+
+      <!-- Loading spinner -->
+      <div id="loading" style="display:none;">
+        <div class="spinner"></div>
+        <p class="loading-text">AI is reading your text...</p>
+      </div>
+
+      <!-- Result -->
+      <div id="result"></div>
+
+      <!-- Copy button -->
+      <button class="copy-btn" onclick="copyResult()">
+        📋 Copy Summary
+      </button>
+    </div>
+
+    <!-- Error message -->
+    <div id="errorBox" class="error-box" style="display:none;"></div>
+
+    <!-- Footer -->
+    <p class="footer">Built by Sohaib Nadeem — Powered by Google Gemini AI</p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
